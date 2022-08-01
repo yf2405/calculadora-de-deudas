@@ -216,14 +216,14 @@ actualizar=()=>{
 
   totalGstos=0;
   gastos.map(gastos=>{
-  totalGstos+=parseInt(gastos.costo);
+  totalGstos+=parseFloat(gastos.costo);
   });
  
   //document.getElementById("Presupuesto").innerHTML = totalGstos;
   restante= presupuesto-totalGstos
 
- document.getElementById("totalGastos").innerHTML = "total de gastos es $ " + totalGstos; 
-  document.getElementById("Presupuesto").innerHTML = "total de presupuesto es de $ " + presupuesto;
+ document.getElementById("totalGastos").innerHTML = "total de gastos es $ " + parseFloat(totalGstos); 
+  document.getElementById("Presupuesto").innerHTML = "total de presupuesto es de $ " + parseFloat(presupuesto);
 }
 
 
@@ -232,6 +232,7 @@ actualizar=()=>{
    $('#adicionar').click(function() {
   let producto = document.getElementById("producto").value;
   let costo = parseInt(document.getElementById("costo").value);
+
 
   if(costo<1|| isNaN(costo)|| producto.trim()===''){
    
